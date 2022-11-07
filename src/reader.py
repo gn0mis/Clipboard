@@ -3,7 +3,7 @@ import yaml
 
 class Reader:
     
-    def __init__(self, filepath):
+    def __init__(self, filepath) -> None:
         self.commands = {}
         if os.path.exists(filepath):
             with open(filepath, "r") as stream:
