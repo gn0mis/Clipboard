@@ -2,14 +2,7 @@ import sys
 import clipboard
 import json
 
-commands = {
-    "save": 1,
-    "load": 2,
-    "list": 3,
-    "--help": 4
-}
 
-command_list = list(commands.keys())
 
 if len(sys.argv) == 2:
     command = sys.argv[1]
