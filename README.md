@@ -1,0 +1,2 @@
+# Clipboard
+Storing your clipboard
