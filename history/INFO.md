@@ -1,0 +1,1 @@
+Directory where the clipboard information is stored.
