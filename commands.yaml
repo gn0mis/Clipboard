@@ -1,4 +1,4 @@
-save: description of save command
-load: description of load command
-list: description of list command
---help: help command
+save: saves clipboard item and connecte it with given key.
+load: gives the clipboard item for a specific key. Use date with formula 'yyyy-mm-dd' as key to list the entire log for that day.
+list: lists the different keys describing the clipboard item. Add date with formula 'yyyy-mm-dd' if you want to access another day.
+--help: lists out all the commands, and what they do.
