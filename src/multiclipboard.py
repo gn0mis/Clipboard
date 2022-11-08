@@ -3,7 +3,7 @@ import json
 import os
 import re
 from sys import argv
-from datetime import date, datetime
+from datetime import date
 
 import reader
 import writer
@@ -34,14 +34,23 @@ if len(argv) <= 3:
             r = reader.Reader(PARENT + "/history/" + key + ".json").out
             for key in r:
                 print(f"{key}: {r[key]}")
-
         elif data.get(key):
             print(data.get(key))
         else:
             print("Given key hasn't been logged today.")
 
-    elif command == "list" and len(argv) == 2:
-        print(command)
+    elif command == "list":
+        if len(argv) == 2:
+            l = list(data.keys())
+            for item in l:
+                print(item)
+        elif len(argv) == 3 and re.match(DATE_CHECK, argv[2]):
+            r = reader.Reader(PARENT + "/history/" + key + ".json").out
+            for key in r:
+                print(key)
+        else:
+            print("No data has been logged for given date, or command two is invalid")
+
     elif command == "--help" and len(argv) == 2:
         print("The different commands are: ")
         for command in command_list:
