@@ -1,7 +1,8 @@
-import clipboard
-import json
+'''Module that stores clipboard information in a json file'''
+
 import os
 import re
+import clipboard
 from sys import argv
 from datetime import date
 
@@ -14,12 +15,12 @@ DATE_CHECK = "^[0-9]{4}\\-[0-9]{1,2}\\-[0-9]{1,2}$"
 com_file = os.path.join(PARENT, "commands.yaml")
 commands = reader.Reader(com_file).out
 command_list = list(commands.keys())
-    
+
 if len(argv) <= 3:
     command = argv[1]
     filename = str(date.today()) + ".json"
     data = reader.Reader(PARENT + "/history/" + filename).out
-    
+
     if command == "save" and len(argv) == 3:
         key = argv[2]
         value = clipboard.paste()
@@ -49,7 +50,8 @@ if len(argv) <= 3:
             for key in r:
                 print(key)
         else:
-            print("No data has been logged for given date, or command two is invalid")
+            print("No data has been logged for given date, or command two is "
+            "invalid")
 
     elif command == "--help" and len(argv) == 2:
         print("The different commands are: ")
@@ -59,4 +61,5 @@ if len(argv) <= 3:
         print("Unknown command. Type '--help' for more information.")
 else:
     print("If using 'save' command, pass save command and one string "
-    "being used as a key. Otherwise, pass exactly one command  For more info write '--help'.")
+    "being used as a key. Otherwise, pass exactly one command  For more info "
+    "write '--help'.")
