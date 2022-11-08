@@ -8,4 +8,4 @@ class Writer:
         filepath = os.path.join(path, filename)
 
         with open(filepath, "w") as f:
-            json.dump(data, f)
+            json.dump(data, f, indent=2)
