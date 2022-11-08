@@ -45,7 +45,7 @@ if len(argv) <= 3:
             for item in l:
                 print(item)
         elif len(argv) == 3 and re.match(DATE_CHECK, argv[2]):
-            r = reader.Reader(PARENT + "/history/" + key + ".json").out
+            r = reader.Reader(PARENT + "/history/" + argv[2] + ".json").out
             for key in r:
                 print(key)
         else:
