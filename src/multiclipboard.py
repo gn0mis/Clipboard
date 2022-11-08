@@ -23,6 +23,7 @@ if len(argv) <= 3:
         value = clipboard.paste()
         data[key] = value
         writer.Writer(filename, data)
+        print("Data saved")
 
     elif command == "load" and len(argv) == 2:
         print(command)
